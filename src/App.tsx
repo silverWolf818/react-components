@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button, {ButtonType, ButtonSize} from "./components/Button"
+import Menu from "./components/Menu"
+import MenuItem from "./components/MenuItem"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Button autoFocus className="custom">btn</Button>
+            <Button disabled>disabled</Button>
+            <Button size={ButtonSize.Large}>primary</Button>
+            <Button btnType={ButtonType.Primary}>primary</Button>
+            <Button btnType={ButtonType.Danger}>primary</Button>
+            <Button size={ButtonSize.Small}>Small</Button>
+            <Button btnType={ButtonType.Link} href='https://www.baid.com'>baidu</Button>
+            <div>app</div>
+
+            <Menu mode="vertical" defaultIndex={0} onSelect={(index) => alert(index)}>
+                <MenuItem index={0}>tab1</MenuItem>
+                <MenuItem index={1}>tab2</MenuItem>
+                <MenuItem index={2}>tab3</MenuItem>
+            </Menu>
+        </div>
+    );
 }
 
 export default App;
