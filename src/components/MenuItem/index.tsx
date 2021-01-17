@@ -1,9 +1,9 @@
-import React, {FC, useContext} from "react";
-import classNames from "classnames";
-import {MenuContext} from "../Menu";
+import React, {FC, useContext} from "react"
+import classNames from "classnames"
+import {MenuContext} from "../Menu"
 
 export interface IMenuItemProps {
-    index?: number;
+    index?: string;
     className?: string;
     disabled?: boolean;
     style?: React.CSSProperties;
@@ -25,7 +25,7 @@ const MenuItem: FC<IMenuItemProps> = props => {
     }, className)
 
     const onClick = () => {
-        if (context.onSelect && !disabled && (typeof index === 'number')) {
+        if (context.onSelect && !disabled && (typeof index === 'string')) {
             context.onSelect(index);
         }
     }
