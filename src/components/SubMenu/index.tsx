@@ -70,7 +70,6 @@ const SubMenu: FC<ISubMenuProps> = props => {
                 in={menuOpen}
                 timeout={300}
                 animation='zoom-in-top'
-                appear
             >
                 <ul className={subMenuClasses}>
                     {childrenComponent}
