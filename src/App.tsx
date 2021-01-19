@@ -1,7 +1,7 @@
 import React from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Button, {ButtonType, ButtonSize} from "./components/Button"
+import Button from "./components/Button"
 import Menu from "./components/Menu"
 import MenuItem from "./components/MenuItem"
 import SubMenu from "./components/SubMenu"
@@ -16,11 +16,11 @@ function App() {
 
             <Button autoFocus className="custom">btn</Button>
             <Button disabled>disabled</Button>
-            <Button size={ButtonSize.Large}>primary</Button>
-            <Button btnType={ButtonType.Primary}>primary</Button>
-            <Button btnType={ButtonType.Danger}>primary</Button>
-            <Button size={ButtonSize.Small}>Small</Button>
-            <Button btnType={ButtonType.Link} href='https://www.baid.com'>baidu</Button>
+            <Button size='lg'>primary</Button>
+            <Button btnType='primary'>primary</Button>
+            <Button btnType='danger'>primary</Button>
+            <Button size='sm'>Small</Button>
+            <Button btnType='link' href='https://www.baid.com'>baidu</Button>
             <div>app</div>
             <div style={{ margin:"20px" }}>
                 <Menu defaultIndex={"0"} defaultOpenSubMenus={["1"]} onSelect={(index) => index}>
