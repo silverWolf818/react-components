@@ -2155,7 +2155,7 @@
     prop-types "^15.7.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addons@6.1.14":
+"@storybook/addons@6.1.14", "@storybook/addons@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addons/-/addons-6.1.14.tgz#2b81304bbe696923df95cdcf85cfc592d10f4065"
   integrity sha512-HlpmV7aejp/MeW8bo/WKME3i71gi0men9qcwoovjDjnSF6jXoNLT336a5udKXdHqYSZgzdyURlgLtilCWkWaJQ==

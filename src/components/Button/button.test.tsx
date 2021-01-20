@@ -1,20 +1,20 @@
-import React from "react";
-import {fireEvent, render} from "@testing-library/react";
-import Button, {ButtonProps} from "./button";
+import React from "react"
+import {fireEvent, render} from "@testing-library/react"
+import {Button, ButtonProps} from "./button"
 
 const defaultProps = {
-    onClick: jest.fn()
+    onClick: jest.fn(),
 }
 
 const testProps: ButtonProps = {
     btnType: 'primary',
     size: 'lg',
-    className: 'klass'
+    className: 'klass',
 }
 
 const disabledProps: ButtonProps = {
     disabled: true,
-    onClick: jest.fn()
+    onClick: jest.fn(),
 }
 
 describe('test Button component', () => {
