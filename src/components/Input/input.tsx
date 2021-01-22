@@ -3,6 +3,13 @@ import classNames from 'classnames'
 import {IconProp} from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon'
 
+export function fixControlledValue<T>(value: T) {
+    if (typeof value === 'undefined' || value === null) {
+        return '';
+    }
+    return value;
+}
+
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
     /**设置是否禁用状态，默认为 false */
     disabled?: boolean;
@@ -42,6 +49,11 @@ export const Input: FC<InputProps> = props => {
         'input-group-prepend': !!prepend,
         'input-group-append': !!append,
     })
+
+    if('value' in props){
+        delete restProps.defaultValue
+        restProps.value = fixControlledValue(props.value)
+    }
 
     return (
         <div className={classes} style={style}>
