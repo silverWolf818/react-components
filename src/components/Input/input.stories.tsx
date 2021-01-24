@@ -3,7 +3,7 @@ import {Story, Meta} from '@storybook/react/types-6-0'
 import {Input, InputProps} from './input'
 
 export default {
-    title: '组件总览/表单/Input 按钮',
+    title: '组件总览/数据录入/Input 输入框',
     component: Input,
 } as Meta
 
