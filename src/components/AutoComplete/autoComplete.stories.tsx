@@ -26,26 +26,35 @@ const list = [
 ]
 
 const BasicAutoComplete = (args: AutoCompleteProps) => {
+    const {onSelect, onChange, onKeyDown, ...rest} = args
+    // const handleSuggestions = (query: string) => {
+    //     return list.filter(i => i.value.includes(query))
+    // }
 
-    const handleSuggestions = (query: string) => {
-        return list.filter(i => i.value.includes(query))
+    const handleFetch = (query: string) => {
+        return fetch(`https://api.github.com/search/users?q=${query}`).then(res => res.json()).then(({items}) => {
+            console.log(items)
+            return items.slice(0, 10).map((item: any) => ({value: item.login, ...item}))
+        })
     }
 
-    const renderOption = (item: DataSourceType) => {
-      const obj = item as DataSourceType<ListProps>
-      return (
-        <>
-          <h2>Name: {obj.value}</h2>
-          <p>Number: {obj.number}</p>
-        </>
-      )
-    }
+    // const renderOption = (item: DataSourceType) => {
+    //   const obj = item as DataSourceType<ListProps>
+    //   return (
+    //     <>
+    //       <h2>Name: {obj.value}</h2>
+    //       <p>Number: {obj.number}</p>
+    //     </>
+    //   )
+    // }
+
     return (
         <>
             <AutoComplete
-                onSelect={args.onSelect}
-                renderOption={renderOption}
-                fetchSuggestions={handleSuggestions}
+                {...rest}
+                onSelect={onSelect}
+                // renderOption={renderOption}
+                fetchSuggestions={handleFetch}
             />
         </>
     )
