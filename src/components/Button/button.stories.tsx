@@ -1,17 +1,17 @@
 import React from 'react'
 import {Story, Meta} from '@storybook/react/types-6-0'
-import {Button, ButtonProps} from './button'
+import {Button as ButtonComp, ButtonProps} from './button'
 
 export default {
-    title: '组件总览/通用/Button 按钮',
-    component: Button
+    title: '组件总览/通用/Button',
+    component: ButtonComp
 } as Meta
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
+const Template: Story<ButtonProps> = (args) => <ButtonComp {...args} />
 
-export const Basic = Template.bind({})
+export const Button = Template.bind({})
 
-Basic.args = {
+Button.args = {
     children: 'Basic Button',
     className: 'test',
     disabled: false,

@@ -1,29 +1,29 @@
 import React from 'react'
 import {Story, Meta} from '@storybook/react/types-6-0'
-import {AutoComplete, AutoCompleteProps, DataSourceType} from './autoComplete'
-
-interface ListProps {
-    value: string;
-    number: number;
-}
+import {AutoComplete as AutoCompleteComp, AutoCompleteProps} from './autoComplete'
+// DataSourceType
+// interface ListProps {
+//     value: string;
+//     number: number;
+// }
 
 export default {
-    title: '组件总览/数据录入/AutoComplete 自动完成',
-    component: AutoComplete,
+    title: '组件总览/数据录入/Auto Complete',
+    component: AutoCompleteComp,
 } as Meta
 
-const list = [
-    {value: 'bradley', number: 11},
-    {value: 'pope', number: 1},
-    {value: 'caruso', number: 4},
-    {value: 'cook', number: 2},
-    {value: 'cousins', number: 15},
-    {value: 'james', number: 23},
-    {value: 'AD', number: 3},
-    {value: 'green', number: 14},
-    {value: 'howard', number: 39},
-    {value: 'kuzma', number: 0},
-]
+// const list = [
+//     {value: 'bradley', number: 11},
+//     {value: 'pope', number: 1},
+//     {value: 'caruso', number: 4},
+//     {value: 'cook', number: 2},
+//     {value: 'cousins', number: 15},
+//     {value: 'james', number: 23},
+//     {value: 'AD', number: 3},
+//     {value: 'green', number: 14},
+//     {value: 'howard', number: 39},
+//     {value: 'kuzma', number: 0},
+// ]
 
 const BasicAutoComplete = (args: AutoCompleteProps) => {
     const {onSelect, onChange, onKeyDown, ...rest} = args
@@ -50,7 +50,7 @@ const BasicAutoComplete = (args: AutoCompleteProps) => {
 
     return (
         <>
-            <AutoComplete
+            <AutoCompleteComp
                 {...rest}
                 onSelect={onSelect}
                 // renderOption={renderOption}
@@ -60,4 +60,4 @@ const BasicAutoComplete = (args: AutoCompleteProps) => {
     )
 }
 
-export const Template: Story<AutoCompleteProps> = args => <BasicAutoComplete {...args}/>
+export const AutoComplete: Story<AutoCompleteProps> = args => <BasicAutoComplete {...args}/>
