@@ -1,13 +1,19 @@
 import React from 'react'
 import {Story, Meta} from '@storybook/react/types-6-0'
 import {Upload as UploadComp, UploadFile, UploadProps} from './upload'
+import Icon from '../Icon'
+// import Button from '../Button'
 
 export default {
     title: '组件总览/数据录入/Upload',
     component: UploadComp,
 } as Meta
 
-const Template: Story<UploadProps> = (args) => <UploadComp {...args}/>
+const Template: Story<UploadProps> = (args) => <UploadComp {...args}>
+    <Icon icon="upload" size="5x" theme="secondary" />
+    <br/>
+    <p>Drag file over to upload</p>
+</UploadComp>
 
 export const Upload = Template.bind({})
 
@@ -31,6 +37,14 @@ const defaultFileList: UploadFile[] = [
 
 Upload.args = {
     action: 'https://jsonplaceholder.typicode.com/posts',
-    defaultFileList
+    defaultFileList,
+    name: 'filename',
+    data: {
+        uid:'110'
+    },
+    headers:{
+        'x-power-by':'zzh'
+    },
+    drag: true
     // beforeUpload: checkFile
 }
