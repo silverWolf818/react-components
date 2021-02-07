@@ -1,6 +1,6 @@
 import React, {Children, FC, FunctionComponentElement, useContext, useState, MouseEvent, cloneElement} from "react"
 import classNames from "classnames"
-import {MenuContext} from "../Menu"
+import {MenuContext} from "../Menu/menu"
 import {IMenuItemProps} from "../MenuItem"
 import Icon from "../Icon"
 import Transition from "../Transition"
