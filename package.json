@@ -45,6 +45,11 @@
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "prepublishOnly": "yarn test:nowatch && yarn lint && yarn build"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:nowatch && yarn lint"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -81,6 +86,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-transition-group": "^4.4.0",
     "cross-env": "^7.0.3",
+    "husky": "^4.3.8",
     "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
