@@ -12,6 +12,7 @@
     "Component",
     "React"
   ],
+  "homepage": "https://yaeSakuras.github.io/react-components",
   "repository": {
     "type": "git",
     "url": "https://github.com/yaeSakuras/react-components"
