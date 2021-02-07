@@ -46,11 +46,6 @@
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "prepublishOnly": "yarn test:nowatch && yarn lint && yarn build"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test:nowatch && yarn lint"
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
