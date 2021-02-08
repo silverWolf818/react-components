@@ -16,7 +16,7 @@ const Template: Story<IMenuProps> = (args) => <MenuComp {...args}>
         disabled
     </MenuItem>
     <MenuItem>
-        cool link 2
+        cool link 3
     </MenuItem>
 </MenuComp>
 
